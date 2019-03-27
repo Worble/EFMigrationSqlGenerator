@@ -6,7 +6,7 @@ In all seriousness, making entity relationships in C# and using EF to scaffold m
 It also allows me to develop in SQLite and Deploy in Postgres, since EF handles the differences in the two schema.
 
 # Usage
-Run `python generate_sql.py` in your project root that has Entity Framework configured (this may take some time dependant on the amount of migrations). This will generate a folder called "sql" with your migrations inside. The rest of this repo is just an example project of how it is used and what it generates.
+Run `python generate_sql.py` in your project root that has Entity Framework configured (this may take some time dependant on the amount of migrations). This will generate a folder called "sql" with your migrations inside. For more information, the `generate_sql.py` is commented for readability, but, simply put, all it does is take advantage of the `dotnet ef migrations list` and `dotnet ef migrations script` commands. The rest of this repo is just an example project of how it is used and what it generates.
 
 The SQL generated will be specific to the database configured in EF, to change this, find where you specify the database connection for EF (in this project that is the `OnConfiguring` method in BoardContext.cs) and change Options Builder to use your preferred database.
 
